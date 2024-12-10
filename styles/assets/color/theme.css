@@ -4,6 +4,12 @@ Template Name: Cryptocash – ICO, Cryptocurrency Website & ICO Landing Page HTM
 Version      : 1.6
 */
 
+/*!
+Author       : Bestwebcreator.
+Template Name: Cryptocash – ICO, Cryptocurrency Website & ICO Landing Page HTML + Dashboard Template
+Version      : 1.6
+*/
+
 a:hover,
 header a:hover,
 .navbar-nav li a.active,
@@ -54,7 +60,7 @@ header a:hover,
 .doc_lan li a:hover span i,
 .tab_nav_s2 li.nav-item a.active,
 .tab_nav_s2 li.nav-item a:hover {
-    color: #ff69c9;
+    color: #04f414;
 }
 
 .pr_box h6,
@@ -67,7 +73,7 @@ header a:hover,
 .token_detail li span,
 .discount_text,
 .rating {
-    color: #ffcb68;
+    color: #04f414;
 }
 
 .navbar-expand-lg .navbar-nav>li>.nav-link.active::before,
@@ -90,17 +96,16 @@ header a:hover,
 .timeline_box.complete::before,
 .timeline_box.current .timeline_inner,
 .timeline .owl-nav i:hover {
-    background-color: #ff69c9;
+    background-color: #04f414;
 }
 
 .roadmap_box.current .roadmap_inner::before,
 .timeline_box.current .timeline_inner::before {
-    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #ff67cb;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #04f414;
 }
 
 .btn-default {
-    background-image: -webkit-linear-gradient(left, #ff67cb 0%, #ffcc67 51%, #ff67cb);
-    background-image: linear-gradient(to right, #ff67cb 0%, #ffcc67 51%, #ff67cb);
+    background-color: #04f414;
 }
 
 .btn-default.active.focus,
@@ -114,8 +119,7 @@ header a:hover,
 .btn-default:focus,
 .btn.active:not(:disabled):not(.disabled),
 .btn:active:not(:disabled):not(.disabled) {
-    background-image: -webkit-linear-gradient(left, #ffcc67 0%, #ff67cb 51%, #ffcc67);
-    background-image: linear-gradient(to right, #ffcc67 0%, #ff67cb 51%, #ffcc67);
+    background-color: #04f414;
 }
 
 .btn-border,
@@ -132,8 +136,7 @@ header a:hover,
 .doc_dropdown>a,
 .doc_dropdown>a:hover,
 .doc_dropdown .dropdown-menu {
-    background-image: -webkit-linear-gradient(left, #ffcc67 0%, #ff67cb 99%);
-    background-image: linear-gradient(to right, #ffcc67 0%, #ff67cb 99%);
+    background-color: #04f414;
 }
 
 button,
@@ -141,22 +144,19 @@ button,
 .team_pop .progress-bar,
 .tk_counter_inner .progress-bar.gradient,
 .faq_content4 .card-header a::after {
-    background-image: -webkit-linear-gradient(left, #ff67cb 0%, #ffcc67 99%);
-    background-image: linear-gradient(to right, #ff67cb 0%, #ffcc67 99%);
+    background-color: #04f414;
 }
 
 .gradient_box {
-    background-image: -webkit-linear-gradient(left, #ff67cb 0%, #ffcc67 99%) !important;
-    background-image: linear-gradient(to right, #ff67cb 0%, #ffcc67 99%) !important;
+    background-color: #04f414 !important;
 }
 
 .team_social_s2 {
-    background-image: -webkit-linear-gradient(top, #ff67cb 0%, #ffcc67 99%);
-    background-image: linear-gradient(to bottom, #ff67cb 0%, #ffcc67 99%);
+    background-color: #04f414;
 }
 
 .dl_lan li a {
-    border-color: #ffcc68;
+    border-color: #04f414;
 }
 
 .tags li a:hover,
@@ -165,5 +165,5 @@ button,
 .video_wrap::before,
 .tab_nav_s4 li.nav-item a.active,
 .timeline_box.complete .timeline_circle::before {
-    border-color: #ff69c9;
+    border-color: #04f414;
 }

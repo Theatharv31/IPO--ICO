@@ -54,7 +54,7 @@ header a:hover,
 .doc_lan li a:hover span i,
 .tab_nav_s2 li.nav-item a.active,
 .tab_nav_s2 li.nav-item a:hover {
-    color: #ff69c9;
+    color: #06f726;
 }
 
 .pr_box h6,
@@ -67,7 +67,7 @@ header a:hover,
 .token_detail li span,
 .discount_text,
 .rating {
-    color: #ffcb68;
+    color: #03fb03;
 }
 
 .navbar-expand-lg .navbar-nav>li>.nav-link.active::before,
@@ -90,7 +90,7 @@ header a:hover,
 .timeline_box.complete::before,
 .timeline_box.current .timeline_inner,
 .timeline .owl-nav i:hover {
-    background-color: #ff69c9;
+    background-color: #11f009;
 }
 
 .roadmap_box.current .roadmap_inner::before,

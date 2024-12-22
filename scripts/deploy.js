@@ -3,7 +3,7 @@ const hre = require("hardhat");
 const tokens = (nToken) => {
     return ethers.utils.parseUnits(nToken.toString(), "ether");
 }
-
+// new
 async function main() {
     const _initialSupply = tokens(50000000);
      

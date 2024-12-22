@@ -4,41 +4,62 @@ pragma solidity ^0.8.0;
 
 import "./TheBlockchainCoders.sol";
 
-contract TokenSale{
-    address admin;
+contract TokenSale {
+    address public admin;
     TheBlockchainCoders public tokenContract;
     uint256 public tokenPrice;
     uint256 public tokenSold;
 
-    event Sell(address _buyer, uint256 _amount);
+    mapping(address => uint256) public contributions; // Tracks each buyer's contribution
 
-    constructor(TheBlockchainCoders _tokenContract, uint256 _tokenPrice){
+    event Sell(address _buyer, uint256 _amount);
+    event Refund(address _buyer, uint256 _amount);
+
+    constructor(TheBlockchainCoders _tokenContract, uint256 _tokenPrice) {
         admin = msg.sender;
         tokenContract = _tokenContract;
         tokenPrice = _tokenPrice;
     }
 
     function multiply(uint256 x, uint256 y) internal pure returns (uint256 z) {
-        require(y == 0 || (z = x * y)/ y == x);
+        require(y == 0 || (z = x * y) / y == x);
     }
 
     function buyToken(uint256 _numberOfTokens) public payable {
-        require(msg.value == multiply(_numberOfTokens, tokenPrice));
-        require(tokenContract.balanceOf(address(this)) >= _numberOfTokens);
-        require(tokenContract.transfer(msg.sender, _numberOfTokens * 1000000000000000000));
+        uint256 totalPrice = multiply(_numberOfTokens, tokenPrice);
+        require(msg.value == totalPrice, "Incorrect Ether value sent");
+        require(tokenContract.balanceOf(address(this)) >= _numberOfTokens, "Not enough tokens in contract");
+        require(tokenContract.transfer(msg.sender, _numberOfTokens * 1 ether), "Token transfer failed");
 
+        contributions[msg.sender] += msg.value; // Track contribution
         tokenSold += _numberOfTokens;
 
         emit Sell(msg.sender, _numberOfTokens);
     }
 
+    function refund() public {
+        uint256 amountPaid = contributions[msg.sender];
+        require(amountPaid > 0, "No contributions to refund");
+
+        // Reset the contribution before transferring Ether to prevent re-entrancy attacks
+        contributions[msg.sender] = 0;
+
+        // Transfer Ether back to the buyer
+        payable(msg.sender).transfer(amountPaid);
+
+        emit Refund(msg.sender, amountPaid);
+    }
+
     function endSale() public {
-        require(msg.sender == admin);
+        require(msg.sender == admin, "Only admin can end the sale");
 
-        //transfer remaining token to admin
-        require(tokenContract.transfer(admin, tokenContract.balanceOf(address(this))));
+        // Transfer remaining tokens to admin
+        require(
+            tokenContract.transfer(admin, tokenContract.balanceOf(address(this))),
+            "Token transfer to admin failed"
+        );
 
-        //payback fund to admin
+        // Transfer remaining Ether to admin
         payable(admin).transfer(address(this).balance);
     }
- }
+}

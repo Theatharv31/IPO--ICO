@@ -23,7 +23,7 @@ import { About,
 
 
 const index = () => {
-  const {transferNativeToken, buyToken, connectWallet, setAddress, TOKEN_ICO, currentHolder, tokenSale, tokenHolders, nativeToken, balance, address} = useStateContext();
+  const {transferNativeToken, buyToken, connectWallet, setAddress, TOKEN_ICO, currentHolder, tokenSale, tokenHolders, nativeToken, balance, address, } = useStateContext();
   return (
   <div className="v_dark">
     <Header 
@@ -34,13 +34,14 @@ const index = () => {
     <Banner transferNativeToken={transferNativeToken}
     />
     <Service />
-    <About />
+     {/* <About /> */}
     <TokenSale
       buyToken={buyToken}
       tokenSale={tokenSale} 
+      
     />
-    <Distribution />
-    <MobileApp />
+    {/* <Distribution /> */}
+    {/* <MobileApp /> */}
    
     <Contact/>
     <Footer/>

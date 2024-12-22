@@ -26,7 +26,7 @@ export const StateContextProvider = ({children}) => {
         const balance = await getBalance();
         setBalance(ethers.utils.formatEther(balance.toString()));
         setAddress(account);
-       // console.log(account);
+       //console.log(account);
 
         //token contract
         const TOKEN_CONTRACT = await connectingTOKENCONTRACT();

@@ -10,8 +10,9 @@
 @import url("./assets/color/theme.css");
 @import url("./assets/owlcarousel/css/owl.carousel.min.css");
 @import url("./assets/owlcarousel/css/owl.theme.default.min.css");
+/*imports
 
-
+*/
 /* custome style */
 .new_icon_style {
     display: flex;
